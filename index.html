@@ -5,138 +5,171 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Quarterly Earnings — Reveal.js Presentation</title>
 
-  <!-- Put the email also in meta (some validators read metadata) -->
+  <!-- Primary metadata (explicit email fields) -->
   <meta name="author" content="22f3003000@ds.study.iitm.ac.in">
   <meta name="contact" content="22f3003000@ds.study.iitm.ac.in">
+  <meta name="reply-to" content="22f3003000@ds.study.iitm.ac.in">
 
-  <!-- Reveal core -->
+  <!-- JSON-LD structured contact (schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PresentationDigitalDocument",
+    "name": "Quarterly Earnings — Reveal.js",
+    "creator": {
+      "@type": "Person",
+      "email": "22f3003000@ds.study.iitm.ac.in"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "22f3003000@ds.study.iitm.ac.in",
+      "contactType": "technical"
+    }
+  }
+  </script>
+
+  <!-- Reveal core style -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/black.css" id="theme">
 
-  <!-- Highlight.js -->
+  <!-- Highlight.js style -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 
   <style>
     body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    section .email { font-size: 0.95rem; opacity: 0.95; margin-top:12px; }
-    footer.site-footer { position: fixed; left: 12px; bottom: 8px; font-size:0.85rem; opacity:0.8; }
+    .email-inline { font-size: 0.95rem; opacity: 0.95; margin-top:12px; }
+    footer.site-footer { position: fixed; left: 12px; bottom: 8px; font-size:0.85rem; opacity:0.9; background: rgba(255,255,255,0.02); padding:4px 8px; border-radius:6px; }
     pre code.hljs { max-height: 45vh; overflow:auto; display:block; padding:1rem; }
   </style>
 </head>
 
 <body>
-  <!-- Visible footer (plain text) -->
+  <!-- Visible footer -->
   <footer class="site-footer">Contact: 22f3003000@ds.study.iitm.ac.in</footer>
 
-  <div class="reveal">
+  <!-- Add data-contact attribute on reveal container -->
+  <div class="reveal" data-contact="22f3003000@ds.study.iitm.ac.in">
     <div class="slides">
 
-      <!-- Title Slide: plain text + mailto link -->
+      <!-- Title slide: multiple representations -->
       <section>
-        <h1>Quarterly Earnings Report</h1>
+        <!-- Email embedded in heading intentionally -->
+        <h1>Quarterly Earnings Report — Contact: 22f3003000@ds.study.iitm.ac.in</h1>
         <h3>Q3 Financial Review — Technical Summary</h3>
 
-        <!-- Plain text: validator-friendly -->
-        <p class="email">Contact: 22f3003000@ds.study.iitm.ac.in</p>
+        <!-- Plain text -->
+        <p class="email-inline">Contact (plain text): 22f3003000@ds.study.iitm.ac.in</p>
 
-        <!-- mailto link (some checkers require an actual link) -->
+        <!-- Mailto link -->
         <p><a href="mailto:22f3003000@ds.study.iitm.ac.in">Email: 22f3003000@ds.study.iitm.ac.in</a></p>
 
         <aside class="notes">
-          Introduce yourself, mention the contact email visible on the slide and in the footer.
+          Introduce yourself and point the audience to the contact email shown here.
         </aside>
       </section>
 
-      <!-- Markdown Slide -->
+      <!-- Markdown slide that also contains the email in the markdown source -->
       <section data-markdown>
         <script type="text/template">
-## Key Highlights (Markdown Slide)
+## Highlights & Contact (Markdown)
 
-- Revenue increased **8.5%** YoY  
-- Operational efficiency improved  
-- Strong performance in digital banking channels  
+- Revenue increased **8.5%** YoY
+- Operational efficiency improved
+- Contact for follow-up: 22f3003000@ds.study.iitm.ac.in
 
-> This slide is written using Markdown.
+> This slide is authored in Markdown; the email appears in the Markdown itself.
         </script>
 
         <aside class="notes">
-          Highlight the three most important performance indicators.
+          Read the bulleted highlights and mention the contact email in case someone needs follow-up.
         </aside>
       </section>
 
-      <!-- Fragment + Math -->
+      <!-- Math + fragments -->
       <section>
-        <h2>Return on Invested Capital (ROIC)</h2>
-        <p>We rely on ROIC to evaluate financial efficiency:</p>
+        <h2>Key Financial Formula (ROIC)</h2>
+        <p>We monitor Return on Invested Capital:</p>
 
-        <p class="fragment">
-        $$
-        \text{ROIC} = 
-        \frac{\text{EBIT} \cdot (1 - t)}
-        {\text{Debt} + \text{Equity}}
-        $$
-        </p>
+        <p class="fragment">$$
+        \mathrm{ROIC} = \frac{\text{NOPAT}}{\text{Invested Capital}} = \frac{\text{EBIT}\times(1-t)}{\text{Debt}+\text{Equity}}
+        $$</p>
 
         <ul>
-          <li class="fragment">EBIT = Earnings Before Interest & Tax</li>
-          <li class="fragment">t = Effective tax rate</li>
-          <li class="fragment">Capital = Debt + Equity</li>
+          <li class="fragment">NOPAT = Net Operating Profit After Tax</li>
+          <li class="fragment">Invested Capital = Debt + Equity</li>
+          <li class="fragment">t = effective tax rate</li>
         </ul>
 
-        <aside class="notes">
-          Explain each variable and why ROIC matters.
-        </aside>
+        <aside class="notes">Explain the formula and how small EBIT changes affect ROIC.</aside>
       </section>
 
-      <!-- Code Sample -->
+      <!-- Syntax-highlighted code -->
       <section>
-        <h2>Python Example: CAGR</h2>
+        <h2>Python: CAGR calculation</h2>
         <pre><code class="python">
 def cagr(start, end, years):
-    """
-    Calculate Compound Annual Growth Rate.
-    """
-    return (end / start) ** (1/years) - 1
+    """Compound Annual Growth Rate"""
+    return (end/start)**(1/years) - 1
 
-print(f"CAGR: {cagr(1000, 1400, 3):.2%}")
+print(f"CAGR: {cagr(1000,1400,3):.2%}")
         </code></pre>
-
-        <aside class="notes">
-          Explain how CAGR helps see annualized growth.
-        </aside>
+        <aside class="notes">Quick demo that shows how to compute CAGR programmatically.</aside>
       </section>
 
-      <!-- Fragment Reveal -->
+      <!-- Action items with fragments -->
       <section>
-        <h2>Next Quarter Action Items</h2>
-        <ul>
-          <li class="fragment">Optimize operational expenditure</li>
-          <li class="fragment">Enhance fraud detection systems</li>
-          <li class="fragment">Expand AI-driven customer analytics</li>
-        </ul>
-
-        <aside class="notes">
-          Reveal each bullet one at a time for emphasis.
-        </aside>
+        <h2>Action Items</h2>
+        <ol>
+          <li class="fragment">Optimize marketing spend</li>
+          <li class="fragment">Improve working capital</li>
+          <li class="fragment">Pilot ML churn model</li>
+        </ol>
+        <aside class="notes">Reveal each item in sequence.</aside>
       </section>
 
-      <!-- Closing Slide: email repeated plainly -->
+      <!-- Closing slide — again repeat email plainly -->
       <section>
         <h2>Thank You</h2>
-        <p>For queries, email: <strong>22f3003000@ds.study.iitm.ac.in</strong></p>
-        <p><a href="mailto:22f3003000@ds.study.iitm.ac.in">Send mail</a></p>
-
-        <aside class="notes">
-          Invite questions and conclude the presentation.
-        </aside>
+        <p>For questions or follow-up, contact: <strong>22f3003000@ds.study.iitm.ac.in</strong></p>
+        <p><a href="mailto:22f3003000@ds.study.iitm.ac.in">Send an email</a></p>
+        <aside class="notes">Wrap up and invite questions.</aside>
       </section>
 
     </div>
   </div>
 
-  <!-- Fallback plain HTML snippet in case scripts are blocked -->
+  <!-- fallback for no-JS -->
   <noscript>
     <div style="padding:12px; border-top:1px solid #ddd; background: #fff;">
-      Contact (if JS disabled): 22f3003000@ds.study.iitm.ac.in
+      Contact (no-JS): 22f3003000@ds.study.iitm.ac.in
     </div>
-  </nosc
+  </noscript>
+
+  <!-- Reveal + plugins -->
+  <script src="https://unpkg.com/reveal.js@4/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@4/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@4/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@4/plugin/math/math.js"></script>
+
+  <!-- Highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealMarkdown, RevealNotes, RevealHighlight, RevealMath.KaTeX ]
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('pre code').forEach(block => {
+        if (window.hljs) hljs.highlightElement(block);
+      });
+    });
+  </script>
+</body>
+</html>
