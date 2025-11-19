@@ -5,159 +5,128 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Quarterly Earnings — Reveal.js Presentation</title>
 
-  <!-- Primary metadata (explicit email fields) -->
+  <!-- Metadata containing your email -->
   <meta name="author" content="22f3003000@ds.study.iitm.ac.in">
   <meta name="contact" content="22f3003000@ds.study.iitm.ac.in">
-  <meta name="reply-to" content="22f3003000@ds.study.iitm.ac.in">
 
-  <!-- JSON-LD structured contact (schema.org) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "PresentationDigitalDocument",
-    "name": "Quarterly Earnings — Reveal.js",
-    "creator": {
-      "@type": "Person",
-      "email": "22f3003000@ds.study.iitm.ac.in"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "22f3003000@ds.study.iitm.ac.in",
-      "contactType": "technical"
-    }
-  }
-  </script>
-
-  <!-- Reveal core style -->
+  <!-- Reveal core -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reveal.css">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/black.css">
 
-  <!-- Highlight.js style -->
+  <!-- Highlight.js CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    .email-inline { font-size: 0.95rem; opacity: 0.95; margin-top:12px; }
-    footer.site-footer { position: fixed; left: 12px; bottom: 8px; font-size:0.85rem; opacity:0.9; background: rgba(255,255,255,0.02); padding:4px 8px; border-radius:6px; }
-    pre code.hljs { max-height: 45vh; overflow:auto; display:block; padding:1rem; }
+    footer.site-footer {
+      position: fixed;
+      left: 12px;
+      bottom: 8px;
+      opacity: 0.8;
+      font-size: 0.85rem;
+    }
+    pre code.hljs {
+      display: block;
+      padding: 1rem;
+      font-size: 1rem;
+      max-height: 45vh;
+      overflow: auto;
+    }
   </style>
 </head>
 
 <body>
-  <!-- Visible footer -->
   <footer class="site-footer">Contact: 22f3003000@ds.study.iitm.ac.in</footer>
 
-  <!-- Add data-contact attribute on reveal container -->
   <div class="reveal" data-contact="22f3003000@ds.study.iitm.ac.in">
     <div class="slides">
 
-      <!-- Title slide: multiple representations -->
+      <!-- Title slide -->
       <section>
-        <!-- Email embedded in heading intentionally -->
-        <h1>Quarterly Earnings Report — Contact: 22f3003000@ds.study.iitm.ac.in</h1>
-        <h3>Q3 Financial Review — Technical Summary</h3>
-
-        <!-- Plain text -->
-        <p class="email-inline">Contact (plain text): 22f3003000@ds.study.iitm.ac.in</p>
-
-        <!-- Mailto link -->
-        <p><a href="mailto:22f3003000@ds.study.iitm.ac.in">Email: 22f3003000@ds.study.iitm.ac.in</a></p>
+        <h1>Quarterly Earnings Report</h1>
+        <p>Contact: <strong>22f3003000@ds.study.iitm.ac.in</strong></p>
+        <p><a href="mailto:22f3003000@ds.study.iitm.ac.in">Send me an email</a></p>
 
         <aside class="notes">
-          Introduce yourself and point the audience to the contact email shown here.
+          Welcome the audience and point out your email.
         </aside>
       </section>
 
-      <!-- Markdown slide that also contains the email in the markdown source -->
+      <!-- Markdown slide -->
       <section data-markdown>
         <script type="text/template">
-## Highlights & Contact (Markdown)
+## Highlights (Markdown)
 
-- Revenue increased **8.5%** YoY
-- Operational efficiency improved
-- Contact for follow-up: 22f3003000@ds.study.iitm.ac.in
-
-> This slide is authored in Markdown; the email appears in the Markdown itself.
+- Strong quarterly revenue performance  
+- Improved efficiencies  
+- Contact: 22f3003000@ds.study.iitm.ac.in  
         </script>
-
-        <aside class="notes">
-          Read the bulleted highlights and mention the contact email in case someone needs follow-up.
-        </aside>
+        <aside class="notes">Markdown slide explanation.</aside>
       </section>
 
-      <!-- Math + fragments -->
+      <!-- Math + Fragments -->
       <section>
-        <h2>Key Financial Formula (ROIC)</h2>
-        <p>We monitor Return on Invested Capital:</p>
+        <h2>ROIC Formula</h2>
 
         <p class="fragment">$$
-        \mathrm{ROIC} = \frac{\text{NOPAT}}{\text{Invested Capital}} = \frac{\text{EBIT}\times(1-t)}{\text{Debt}+\text{Equity}}
+        \mathrm{ROIC} = \frac{\text{EBIT}(1-t)}{\text{Debt} + \text{Equity}}
         $$</p>
 
         <ul>
-          <li class="fragment">NOPAT = Net Operating Profit After Tax</li>
-          <li class="fragment">Invested Capital = Debt + Equity</li>
-          <li class="fragment">t = effective tax rate</li>
+          <li class="fragment">EBIT = Earnings Before Interest & Tax</li>
+          <li class="fragment">t = tax rate</li>
         </ul>
 
-        <aside class="notes">Explain the formula and how small EBIT changes affect ROIC.</aside>
+        <aside class="notes">Explain formula.</aside>
       </section>
 
-      <!-- Syntax-highlighted code -->
+      <!-- Code block with VALID syntax highlighting -->
       <section>
-        <h2>Python: CAGR calculation</h2>
-        <pre><code class="python">
+        <h2>Python: CAGR Example</h2>
+        <pre><code class="hljs language-python">
 def cagr(start, end, years):
-    """Compound Annual Growth Rate"""
-    return (end/start)**(1/years) - 1
+    """
+    Compound Annual Growth Rate.
+    """
+    return (end / start) ** (1/years) - 1
 
-print(f"CAGR: {cagr(1000,1400,3):.2%}")
+print(f"CAGR: {cagr(1000, 1400, 3):.2%}")
         </code></pre>
-        <aside class="notes">Quick demo that shows how to compute CAGR programmatically.</aside>
+
+        <aside class="notes">
+          Explain CAGR.
+        </aside>
       </section>
 
-      <!-- Action items with fragments -->
       <section>
-        <h2>Action Items</h2>
-        <ol>
-          <li class="fragment">Optimize marketing spend</li>
-          <li class="fragment">Improve working capital</li>
-          <li class="fragment">Pilot ML churn model</li>
-        </ol>
-        <aside class="notes">Reveal each item in sequence.</aside>
+        <h2>Next Steps</h2>
+        <ul>
+          <li class="fragment">Optimize spend</li>
+          <li class="fragment">Improve forecasting models</li>
+        </ul>
+        <aside class="notes"></aside>
       </section>
 
-      <!-- Closing slide — again repeat email plainly -->
       <section>
         <h2>Thank You</h2>
-        <p>For questions or follow-up, contact: <strong>22f3003000@ds.study.iitm.ac.in</strong></p>
-        <p><a href="mailto:22f3003000@ds.study.iitm.ac.in">Send an email</a></p>
-        <aside class="notes">Wrap up and invite questions.</aside>
+        <p>Contact: <strong>22f3003000@ds.study.iitm.ac.in</strong></p>
       </section>
 
     </div>
   </div>
 
-  <!-- fallback for no-JS -->
-  <noscript>
-    <div style="padding:12px; border-top:1px solid #ddd; background: #fff;">
-      Contact (no-JS): 22f3003000@ds.study.iitm.ac.in
-    </div>
-  </noscript>
-
-  <!-- Reveal + plugins -->
+  <!-- Reveal JS -->
   <script src="https://unpkg.com/reveal.js@4/dist/reveal.js"></script>
   <script src="https://unpkg.com/reveal.js@4/plugin/markdown/markdown.js"></script>
   <script src="https://unpkg.com/reveal.js@4/plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@4/plugin/highlight/highlight.js"></script>
-  <script src="https://unpkg.com/reveal.js@4/plugin/math/math.js"></script>
 
   <!-- Highlight.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 
-  <!-- KaTeX -->
+  <!-- KaTeX for math -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+  <script src="https://unpkg.com/reveal.js@4/plugin/math/math.js"></script>
 
   <script>
     Reveal.initialize({
@@ -165,11 +134,11 @@ print(f"CAGR: {cagr(1000,1400,3):.2%}")
       plugins: [ RevealMarkdown, RevealNotes, RevealHighlight, RevealMath.KaTeX ]
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('pre code').forEach(block => {
-        if (window.hljs) hljs.highlightElement(block);
-      });
+    // Manually trigger Highlight.js
+    document.querySelectorAll("pre code").forEach(block => {
+      hljs.highlightElement(block);
     });
   </script>
+
 </body>
 </html>
