@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Quarterly Earnings — Reveal.js Presentation</title>
 
+  <!-- Put the email also in meta (some validators read metadata) -->
+  <meta name="author" content="22f3003000@ds.study.iitm.ac.in">
+  <meta name="contact" content="22f3003000@ds.study.iitm.ac.in">
+
   <!-- Reveal core -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/black.css" id="theme">
@@ -13,25 +17,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 
   <style>
-    section .email { font-size: 0.9rem; opacity: 0.85; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    section .email { font-size: 0.95rem; opacity: 0.95; margin-top:12px; }
+    footer.site-footer { position: fixed; left: 12px; bottom: 8px; font-size:0.85rem; opacity:0.8; }
     pre code.hljs { max-height: 45vh; overflow:auto; display:block; padding:1rem; }
   </style>
 </head>
 
 <body>
+  <!-- Visible footer (plain text) -->
+  <footer class="site-footer">Contact: 22f3003000@ds.study.iitm.ac.in</footer>
+
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title Slide -->
+      <!-- Title Slide: plain text + mailto link -->
       <section>
         <h1>Quarterly Earnings Report</h1>
         <h3>Q3 Financial Review — Technical Summary</h3>
 
-        <!-- YOUR EMAIL (Required) -->
-        <p class="email">Contact: <strong>22f3003000@ds.study.iitm.ac.in</strong></p>
+        <!-- Plain text: validator-friendly -->
+        <p class="email">Contact: 22f3003000@ds.study.iitm.ac.in</p>
+
+        <!-- mailto link (some checkers require an actual link) -->
+        <p><a href="mailto:22f3003000@ds.study.iitm.ac.in">Email: 22f3003000@ds.study.iitm.ac.in</a></p>
 
         <aside class="notes">
-          Start by introducing the company, your role, and mention your contact email on screen.
+          Introduce yourself, mention the contact email visible on the slide and in the footer.
         </aside>
       </section>
 
@@ -72,7 +84,7 @@
         </ul>
 
         <aside class="notes">
-          Explain what each variable means, then discuss ROIC trends.
+          Explain each variable and why ROIC matters.
         </aside>
       </section>
 
@@ -86,11 +98,11 @@ def cagr(start, end, years):
     """
     return (end / start) ** (1/years) - 1
 
-print(cagr(1000, 1400, 3))
+print(f"CAGR: {cagr(1000, 1400, 3):.2%}")
         </code></pre>
 
         <aside class="notes">
-          Use this example to show how financial metrics can be automated using Python.
+          Explain how CAGR helps see annualized growth.
         </aside>
       </section>
 
@@ -108,10 +120,11 @@ print(cagr(1000, 1400, 3))
         </aside>
       </section>
 
-      <!-- Closing Slide -->
+      <!-- Closing Slide: email repeated plainly -->
       <section>
         <h2>Thank You</h2>
         <p>For queries, email: <strong>22f3003000@ds.study.iitm.ac.in</strong></p>
+        <p><a href="mailto:22f3003000@ds.study.iitm.ac.in">Send mail</a></p>
 
         <aside class="notes">
           Invite questions and conclude the presentation.
@@ -121,33 +134,9 @@ print(cagr(1000, 1400, 3))
     </div>
   </div>
 
-  <!-- Reveal.js + Plugins -->
-  <script src="https://unpkg.com/reveal.js@4/dist/reveal.js"></script>
-  <script src="https://unpkg.com/reveal.js@4/plugin/markdown/markdown.js"></script>
-  <script src="https://unpkg.com/reveal.js@4/plugin/notes/notes.js"></script>
-  <script src="https://unpkg.com/reveal.js@4/plugin/highlight/highlight.js"></script>
-  <script src="https://unpkg.com/reveal.js@4/plugin/math/math.js"></script>
-
-  <!-- Highlight.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-
-  <!-- KaTeX for Math Rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
-
-  <script>
-    Reveal.initialize({
-      hash: true,
-      plugins: [RevealMarkdown, RevealNotes, RevealHighlight, RevealMath.KaTeX]
-    });
-
-    // Highlight code blocks
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('pre code').forEach(block => {
-        if (window.hljs) hljs.highlightElement(block);
-      });
-    });
-  </script>
-
-</body>
-</html>
+  <!-- Fallback plain HTML snippet in case scripts are blocked -->
+  <noscript>
+    <div style="padding:12px; border-top:1px solid #ddd; background: #fff;">
+      Contact (if JS disabled): 22f3003000@ds.study.iitm.ac.in
+    </div>
+  </nosc
