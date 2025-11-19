@@ -3,148 +3,151 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Quarterly Earnings — Reveal.js</title>
+  <title>Quarterly Earnings — Reveal.js Presentation</title>
 
-  <!-- Reveal core (via CDN for simplicity) -->
+  <!-- Reveal core -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/black.css" id="theme">
 
-  <!-- Highlight.js for code highlighting -->
+  <!-- Highlight.js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 
   <style>
-    /* small styling tweak */
     section .email { font-size: 0.9rem; opacity: 0.85; }
     pre code.hljs { max-height: 45vh; overflow:auto; display:block; padding:1rem; }
   </style>
 </head>
+
 <body>
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title slide -->
+      <!-- Title Slide -->
       <section>
         <h1>Quarterly Earnings Report</h1>
         <h3>Q3 Financial Review — Technical Summary</h3>
-        <p class="email">Contact: 22f3003000@ds.study.iitm.ac.in</p>
+
+        <!-- YOUR EMAIL (Required) -->
+        <p class="email">Contact: <strong>22f3003000@ds.study.iitm.ac.in</strong></p>
+
         <aside class="notes">
-          Introduce yourself, the agenda and point stakeholders to the contact email on the slide.
+          Start by introducing the company, your role, and mention your contact email on screen.
         </aside>
       </section>
 
-      <!-- Markdown slide: uses data-markdown attribute -->
+      <!-- Markdown Slide -->
       <section data-markdown>
         <script type="text/template">
-## Highlights (Markdown slide)
+## Key Highlights (Markdown Slide)
 
-- Revenue up **8.5%** YoY.
-- Net margin improved due to cost optimization.
-- Continued investments in digital channels.
+- Revenue increased **8.5%** YoY  
+- Operational efficiency improved  
+- Strong performance in digital banking channels  
 
-> Note: this slide is authored in Markdown (supports **bold**, lists, and blockquotes).
+> This slide is written using Markdown.
         </script>
+
         <aside class="notes">
-          Walk through the three high-level highlights. Call out YoY number and main driver.
+          Highlight the three most important performance indicators.
         </aside>
       </section>
 
-      <!-- Fragment example with math and speaker notes -->
+      <!-- Fragment + Math -->
       <section>
-        <h2>Key Financial Formula</h2>
-        <p>We monitor Return on Invested Capital (ROIC):</p>
+        <h2>Return on Invested Capital (ROIC)</h2>
+        <p>We rely on ROIC to evaluate financial efficiency:</p>
 
-        <!-- Math (MathJax plugin will render it) -->
-        <p class="fragment">$$
-\mathrm{ROIC} = \frac{\text{NOPAT}}{\text{Invested\ Capital}} = \frac{\text{EBIT} \times (1 - t)}{ \text{Debt} + \text{Equity} }
-$$</p>
+        <p class="fragment">
+        $$
+        \text{ROIC} = 
+        \frac{\text{EBIT} \cdot (1 - t)}
+        {\text{Debt} + \text{Equity}}
+        $$
+        </p>
 
         <ul>
-          <li class="fragment">NOPAT = Net Operating Profit After Tax</li>
-          <li class="fragment">Invested Capital = Debt + Equity</li>
-          <li class="fragment">t = effective tax rate</li>
+          <li class="fragment">EBIT = Earnings Before Interest & Tax</li>
+          <li class="fragment">t = Effective tax rate</li>
+          <li class="fragment">Capital = Debt + Equity</li>
         </ul>
 
         <aside class="notes">
-          Explain the formula and why ROIC is meaningful. Show how small improvements in EBIT amplify ROIC.
+          Explain what each variable means, then discuss ROIC trends.
         </aside>
       </section>
 
-      <!-- Code sample with syntax highlighting -->
+      <!-- Code Sample -->
       <section>
-        <h2>Sample: Calculating CAGR (Python)</h2>
+        <h2>Python Example: CAGR</h2>
         <pre><code class="python">
-def cagr(start_value, end_value, years):
+def cagr(start, end, years):
     """
-    Compound Annual Growth Rate.
+    Calculate Compound Annual Growth Rate.
     """
-    return (end_value / start_value) ** (1.0 / years) - 1
+    return (end / start) ** (1/years) - 1
 
-# Example
-print(f"CAGR: {cagr(1000, 1280, 3):.2%}")
+print(cagr(1000, 1400, 3))
         </code></pre>
 
         <aside class="notes">
-          Briefly explain CAGR formula and why it's useful for projecting growth across periods.
+          Use this example to show how financial metrics can be automated using Python.
         </aside>
       </section>
 
-      <!-- Slide showing staged reveal fragments for talking points -->
+      <!-- Fragment Reveal -->
       <section>
-        <h2>Action Items (next quarter)</h2>
-        <ol>
-          <li class="fragment">Optimize marketing spend by reallocating to high-ROI channels</li>
-          <li class="fragment">Tighten working capital management</li>
-          <li class="fragment">Pilot a machine learning model to forecast churn</li>
-        </ol>
+        <h2>Next Quarter Action Items</h2>
+        <ul>
+          <li class="fragment">Optimize operational expenditure</li>
+          <li class="fragment">Enhance fraud detection systems</li>
+          <li class="fragment">Expand AI-driven customer analytics</li>
+        </ul>
 
         <aside class="notes">
-          Use each fragment to make a single point while presenting; pause and expand on item before revealing next.
+          Reveal each bullet one at a time for emphasis.
         </aside>
       </section>
 
-      <!-- Closing slide with contact -->
+      <!-- Closing Slide -->
       <section>
-        <h2>Questions</h2>
-        <p>Thanks — reach me at <strong>22f3003000@ds.study.iitm.ac.in</strong></p>
+        <h2>Thank You</h2>
+        <p>For queries, email: <strong>22f3003000@ds.study.iitm.ac.in</strong></p>
+
         <aside class="notes">
-          Invite questions. If time, show an appendix slide with more detail.
+          Invite questions and conclude the presentation.
         </aside>
       </section>
 
     </div>
   </div>
 
-  <!-- Reveal.js core + plugins -->
+  <!-- Reveal.js + Plugins -->
   <script src="https://unpkg.com/reveal.js@4/dist/reveal.js"></script>
-
-  <!-- Plugins: Markdown, Highlight, Math (MathJax) -->
   <script src="https://unpkg.com/reveal.js@4/plugin/markdown/markdown.js"></script>
   <script src="https://unpkg.com/reveal.js@4/plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@4/plugin/highlight/highlight.js"></script>
   <script src="https://unpkg.com/reveal.js@4/plugin/math/math.js"></script>
 
-  <!-- Highlight.js lib (for languages) -->
+  <!-- Highlight.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 
-  <script>
-    const deck = new Reveal({
-      hash: true,
-      plugins: [ RevealMarkdown, RevealNotes, RevealHighlight, RevealMath.KaTeX ]
-      // If you prefer MathJax: use RevealMath.MathJax instead of KaTeX above.
-    });
-    deck.initialize();
+  <!-- KaTeX for Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
 
-    // initialize highlight.js for code blocks
-    document.addEventListener('DOMContentLoaded', (event) => {
-      document.querySelectorAll('pre code').forEach((block) => {
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [RevealMarkdown, RevealNotes, RevealHighlight, RevealMath.KaTeX]
+    });
+
+    // Highlight code blocks
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('pre code').forEach(block => {
         if (window.hljs) hljs.highlightElement(block);
       });
     });
   </script>
-
-  <!-- KaTeX (used by RevealMath.KaTeX plugin) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
 
 </body>
 </html>
